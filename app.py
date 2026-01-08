@@ -4,7 +4,8 @@ import io
 from flask import Flask, render_template, send_file, url_for
 
 app = Flask(__name__)
-MODELS_DIR = os.path.join('static', 'models')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR = os.path.join(BASE_DIR, 'static', 'models')
 
 def get_restaurants():
     if not os.path.exists(MODELS_DIR): os.makedirs(MODELS_DIR)
